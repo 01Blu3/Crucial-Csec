@@ -33,6 +33,13 @@
               victim to cick on a malicious link, which can lead to malware
               infection which in turn can lead to further escalations.
             </p>
+            <img
+              src="images/chevron-forward-circle-outline.svg"
+              alt=""
+              srcset=""
+              class="movefwd-img"
+              onclick="changeCase()"
+            />
           </div>
 
           <div class="experience">
@@ -45,21 +52,38 @@
               Do not visit Queried websites as they are malicious!
             </p>
           </div>
-          <!-- <div class="topic-2">
-            <h2>Entropy of Passwords</h2>
-            <ion-icon name="barcode-outline"></ion-icon>
-            <p>
-              <button class="btn btn-entropy"></button>
-            </p>
-          </div>
-          <div class="topic-3">
-            <h2>topic 3</h2>
-            <ion-icon name="contract-outline"></ion-icon>
-            <p>
-              <button class="btn btn-"></button>
-            </p>
-          </div> -->
         </div>
+
+        <div class="topic-2 hide">
+          <div class="topic-2-box">
+            <ion-icon name="barcode-outline" class="icon"></ion-icon>
+            <h2>Password Entropy</h2>
+            <p>
+              Password entropy is the measurement of how unpredictable a
+              Password is, it is based on the different types of characters used
+              ranging from numbers, letters and symbols. What this method does
+              is estimate how difficult it would be to crack a given password.
+              While the ideal password lengths might not be completely
+              practical, it does provide a guiding line.
+            </p>
+            <img
+              src="images/chevron-back-circle-outline.svg"
+              alt=""
+              srcset=""
+              class="movebwd-img"
+              onclick="changeCase()"
+            />
+          </div>
+
+          <div class="experience">
+            <input
+              type="text"
+              class="searchQuery entropy"
+              placeholder=" Enter a password..."
+            />
+          </div>
+        </div>
+        <!-- End of topic-2 -->
       </div>
     </heading>
 

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 /* 
 const options = { method: 'GET', headers: { Accept: 'application/json' } };
 
@@ -17,9 +17,17 @@ fetch('https://phishstats.info:2096/api/', options)
 //   .then(data => console.log(data))
 //   .catch(console.error(err));
 
-const codeSearch = document.querySelector('.searchQuery');
-const experience = document.querySelector('.experience');
+const topic = document.querySelector(".topic");
+const codeSearch = document.querySelector(".searchQuery");
+const experience = document.querySelector(".experience");
+const toStage2 = document.querySelector(".movefwd-img");
+const contentGrid = document.querySelector(".content-grid");
+const topic2 = document.querySelector(".topic-2");
+const entropy = document.querySelector(".entropy");
 let countryCode;
+
+///////////////////////////////////////////////////
+/* Handling Phishing Attacks */
 
 const renderTable = function (data) {
   const html = `
@@ -45,14 +53,14 @@ const renderTable = function (data) {
   </table>
   `;
 
-  experience.insertAdjacentHTML('beforeend', html);
+  experience.insertAdjacentHTML("beforeend", html);
 };
 
 const addTableRow = function (data, num) {
   let curData = data[num];
   const html = `
   <tr>
-    <td>${curData.city || '?'}</td>
+    <td>${curData.city || "?"}</td>
     <td class = "isp">${curData.isp}</td>
     <td>${curData.host}</td>
     <td>${curData.ip}</td>
@@ -61,20 +69,50 @@ const addTableRow = function (data, num) {
 };
 
 console.log(codeSearch);
-codeSearch.addEventListener('keypress', event => {
-  if (event.key == 'Enter' && codeSearch.value.length == 2)
+codeSearch.addEventListener("keypress", (event) => {
+  if (event.key == "Enter" && codeSearch.value.length == 2)
     countryCode =
       codeSearch.value &&
       fetch(
         `https://phishstats.info:2096/api/phishing?_where=(countrycode,eq,${codeSearch.value})`
       )
-        .then(res => {
+        .then((res) => {
           console.log(res);
           return res.json();
         })
-        .then(data => {
+        .then((data) => {
           renderTable(data);
-          codeSearch.value = '';
+          codeSearch.value = "";
         })
-        .catch(err => console.error(err));
+        .catch((err) => console.error(err));
 });
+
+function changeCase() {
+  contentGrid.classList.toggle("hide");
+  topic2.classList.toggle("hide");
+}
+
+///////////////////////////////////////////////////
+/* Handling Password Entropy */
+
+/* entropy.addEventListener("keypress", (e) => {
+  let flags = [];
+  if (e.key == "Enter") {
+    const pass = document.querySelector(".entropy").value;
+    pass < 8 && flags.push("a");
+    let matches = val.match(/\d+/g);
+    (matches == null || !hasUpperCase(pass) || !hasLowerCase(pass)) &&
+      flags.push(b);
+
+    if ((flags.length = 0)) {
+    }
+  }
+});
+function hasUpperCase(str) {
+  return /[A-Z]/.test(str);
+}
+
+function hasLowerCase(str) {
+  return /[a-z]/.test(str);
+}
+ */

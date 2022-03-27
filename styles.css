@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #ffff;
@@ -38,16 +38,19 @@ body {
   border-radius: 3rem;
 }
 
-.content-grid {
+.content-grid,
+.topic-2 {
   display: flex;
   gap: 3rem;
 }
 
-.topic {
+.topic,
+.topic-2-box {
   flex-shrink: 0.85;
 }
 
-.topic h2 {
+.topic h2,
+.topic-2 h2 {
   font-size: 3.2rem;
   margin-bottom: 1.2rem;
 }
@@ -56,12 +59,14 @@ body {
   margin-bottom: 2.5rem;
 }
 
-.topic .icon {
+.topic .icon,
+.icon {
   font-size: 4.8rem;
   margin-bottom: 0.5rem;
 }
 
-.topic p {
+.topic p,
+.topic-2 p {
   font-size: 2rem;
   line-height: 2;
 }
@@ -98,6 +103,13 @@ td {
   font-size: 2rem;
 }
 
+.positive {
+  color: green;
+  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
 .inform {
   color: #00ffff;
   font-weight: 600;
@@ -105,4 +117,16 @@ td {
   text-decoration: underline;
   padding: 0.5rem;
   text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.movefwd-img,
+.movebwd-img {
+  height: 5rem;
+  background-color: #999;
+  border-radius: 3rem;
+  margin-left: 25rem;
 }
